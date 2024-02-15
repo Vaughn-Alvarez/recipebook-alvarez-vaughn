@@ -132,4 +132,4 @@ def recipe_2(request):
             ],
             "link": "/recipe/2"
         }
-    return render(request, "recipe_2.html", ctx)
+    return render(request, "recipe_2.html",)

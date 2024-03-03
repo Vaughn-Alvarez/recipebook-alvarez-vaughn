@@ -1,1 +1,7 @@
 csci40lab1/
+recipebook/.env
+recipebook/db.sqlite3
+recipebook/recipebook/__pycache__
+recipebook/ledger/__pycache__
+recipebook/ledger/migrations/__pycache__
+

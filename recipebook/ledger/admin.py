@@ -18,4 +18,9 @@ class RecipeAdmin(admin.ModelAdmin):
     ]
 
 
+class IngredientAdmin(admin.ModelAdmin):
+    model = Ingredient
+
+
 admin.site.register(Recipe, RecipeAdmin)
+admin.site.register(Ingredient, IngredientAdmin)

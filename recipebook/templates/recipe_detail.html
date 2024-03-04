@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Recipe Detail</title>
+</head>
+<body>
+    <h1>{{ object }}</h1>
+    <ul>
+        {% for ingredient in object.ingredients.all %}
+	<li>{{ ingredient.quantity }} {{ ingredient.ingredient.name }}</li>
+	{% endfor %}
+    </ul>
+</body>
+</html>

@@ -7,8 +7,8 @@
     <h1>{{ object }}</h1>
     <ul>
         {% for ingredient in object.ingredients.all %}
-	<li>{{ ingredient.quantity }} {{ ingredient.ingredient.name }}</li>
-	{% endfor %}
+	    <li>{{ ingredient.quantity }} {{ ingredient.ingredient.name }}</li>
+	    {% endfor %}
     </ul>
 </body>
 </html>

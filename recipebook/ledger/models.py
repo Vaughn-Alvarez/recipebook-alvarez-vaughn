@@ -4,13 +4,16 @@ from django.urls import reverse
 
 class Recipe(models.Model):
 
+    name = models.CharField(max_length=100)
+    author = models.CharField(max_length=100)
+    createdOn = models.DateTimeField(auto_now_add=True)
+    updatedOn = models.DateTimeField(auto_now=True)
+
     def __str__(self) -> str:
         return self.name
 
     def get_absolute_url(self):
         return reverse('ledger:recipe-detail', args=[self.pk])
-
-    name = models.CharField(max_length=100)
 
 
 class Ingredient(models.Model):

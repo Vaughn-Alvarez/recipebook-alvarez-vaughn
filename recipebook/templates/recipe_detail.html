@@ -1,14 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Recipe Detail</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}
+    {{object}}
+{% endblock %}
+
+{% block content %}
     <h1>{{ object }}</h1>
+    {% if request.user.is_authenticated %}
+    <h2>by {{ object.author }}</h2>
+    {% endif %}
     <ul>
         {% for ingredient in object.ingredients.all %}
-	    <li>{{ ingredient.quantity }} {{ ingredient.ingredient.name }}</li>
-	    {% endfor %}
+        <li>{{ ingredient.quantity }} {{ ingredient.ingredient.name }}</li>
+        {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}

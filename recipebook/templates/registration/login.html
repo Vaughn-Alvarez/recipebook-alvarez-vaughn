@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
+        <title>Recipe Book | Login</title>
 	</head>
 	<body>
-		<h1> login </h1>
-		<a href="{% url 'password_reset' %}">reset password</a>
+		<h1>Login</h1>
 		<form method="POST">
-		    {% csrf_token %}
-		    {{ form.as_p }}
-		    <button type="submit">LOG IN</button>
+			{% csrf_token %}
+			{{ form.as_p }}
+			<button type="submit">LOG IN</button>
+			<a href="{% url 'password_reset' %}">reset password</a>	
 		</form>
 	</body>
 </html>

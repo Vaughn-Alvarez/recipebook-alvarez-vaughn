@@ -10,6 +10,10 @@
 {% block content %}
     <h1>{{ object }}</h1>
     <h2>by {{ object.author.profile.name }}</h2>
+    <h3>
+        created on: {{ object.createdOn }}<br />
+        updated on: {{ object.updatedOn }}
+    </h3>
     <ul>
         {% for ingredient in object.ingredients.all %}
         <li>{{ ingredient.quantity }} {{ ingredient.ingredient.name }}</li>

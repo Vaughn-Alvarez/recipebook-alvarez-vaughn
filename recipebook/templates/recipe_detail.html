@@ -1,14 +1,15 @@
-{% extends 'base.html' %}
+{% extends 'recipe_base.html' %}
 
-{% block title %}
+{% block pageTitle %}
     {{object}}
+{% endblock %}
+{% block title %}
+    Recipe Detail
 {% endblock %}
 
 {% block content %}
     <h1>{{ object }}</h1>
-    {% if request.user.is_authenticated %}
-    <h2>by {{ object.author }}</h2>
-    {% endif %}
+    <h2>by {{ object.author.profile.name }}</h2>
     <ul>
         {% for ingredient in object.ingredients.all %}
         <li>{{ ingredient.quantity }} {{ ingredient.ingredient.name }}</li>

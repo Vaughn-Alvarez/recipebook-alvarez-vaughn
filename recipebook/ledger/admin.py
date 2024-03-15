@@ -1,5 +1,7 @@
 from django.contrib import admin
 from .models import Recipe, Ingredient, RecipeIngredient
+from accounts.models import Profile
+from django.contrib.auth.models import User
 
 
 class RecipeIngredientInline(admin.TabularInline):
@@ -8,11 +10,12 @@ class RecipeIngredientInline(admin.TabularInline):
 
 class RecipeAdmin(admin.ModelAdmin):
     model = Recipe
-    inlines = [RecipeIngredientInline]
+    inlines = [RecipeIngredientInline,]
     fieldsets = [
         ('Details', {
             'fields': [
-                'name'
+                'name',
+                'author'
             ]
         })
     ]
